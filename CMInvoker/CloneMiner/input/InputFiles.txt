@@ -1,0 +1,9 @@
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxAccelerometer.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxActivity.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxBitmap.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxGLSurfaceView.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxMusic.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxRenderer.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/Cocos2dxSound.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/SCICopy.java
+E:/DSSDLocal/caws/CloneMiner/CMInvoker/Repository/SCSInFileInstance.java
