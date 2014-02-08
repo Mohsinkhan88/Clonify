@@ -3,6 +3,9 @@ package dssd.invoker.test;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
+/**
+ * @author Umer & Hafeez
+ */
 public class AllTests {
 
 	public static Test suite() {
