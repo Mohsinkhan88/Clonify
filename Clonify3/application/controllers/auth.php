@@ -10,7 +10,9 @@ class Auth extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('security');
 		$this->load->library('tank_auth');
+		$this->load->model('repository_model');
 		$this->lang->load('tank_auth');
+		//$this->load->library('repositoryModel');
 		$this->form_validation->set_error_delimiters('', '');
 	}
 
@@ -257,9 +259,12 @@ class Auth extends CI_Controller
 		// Activate user
 		if ($this->tank_auth->activate_user($user_id, $new_email_key)) {		// success
 			$username =  $this->tank_auth->get_username_by_id_mod($user_id);
-			if (!file_exists('C:\xampp\htdocs\Clonify\test\newTest\\'.$username)) {
-				mkdir('C:\xampp\htdocs\Clonify\test\newTest\\'.$username, 0777, true);
+			if (!file_exists('C:\xampp\htdocs\Clonify3\files\\'.$username)) {
+				mkdir('C:\xampp\htdocs\Clonify3\files\\'.$username, 0777, true);
 			}
+			//insert into user_directory table
+			$path = 'C:/xampp/htdocs/Clonify3/files/'.$username.'/';
+			$this->repository_model->insertUserRepository($path,$user_id );
 			$this->tank_auth->logout();
                         $data = $this->tank_auth->get_user_by_id($user_id);
                         $data['site_name'] = $this->config->item('website_name', 'tank_auth');
