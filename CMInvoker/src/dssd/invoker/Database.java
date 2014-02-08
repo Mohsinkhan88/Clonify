@@ -6,8 +6,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+
 /**
- * @author Umer
+ * @author Umer & Hafeez
  */
 public class Database {
 

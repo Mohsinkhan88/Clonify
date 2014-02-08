@@ -13,6 +13,9 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 
+/**
+ * @author Umer & Hafeez
+ */
 public class LoadOutputInDB {
 
 	StringTokenizer st, st1, st2;

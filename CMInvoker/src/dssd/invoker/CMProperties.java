@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
 
+
+/**
+ * @author Umer & Hafeez
+ */
+
 public class CMProperties {
 	private static Properties properties = new Properties();
 	
