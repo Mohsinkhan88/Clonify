@@ -199,9 +199,9 @@ class Auth extends CI_Controller
 			$data['captcha_registration'] = $captcha_registration;
 			$data['use_recaptcha'] = $use_recaptcha;
                         $data['site_name'] = $this->config->item('website_name', 'tank_auth');
-			$this->load->view('partials/main_header');
+			$this->load->view('partials/header');
 			$this->load->view('auth/register_form', $data);
-			$this->load->view('partials/main_footer');
+			$this->load->view('partials/footer');
 		}
 	}
 
