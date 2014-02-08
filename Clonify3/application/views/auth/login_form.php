@@ -188,5 +188,7 @@ $captcha = array(
           });
         };
       </script>
-      <center><div id="fb-login-button" class="fb-login-button" data-scope="email" data-onlogin="login();" size="large">Connect with Facebook</div>
-      </center><br/></div>
+     <center>
+	 <div  id="fb-login-button" class="fb-login-button" data-scope="email" data-onlogin="login();" size="large">Connect with Facebook</div>
+	 </center>
+  </div>

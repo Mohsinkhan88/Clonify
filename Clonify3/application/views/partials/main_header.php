@@ -14,9 +14,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Le styles -->
+	 
+	<link href="<?=asset_url('css/bootstrap/bootstrap.min.css')?>" rel="stylesheet" />
+    <link href="<?=asset_url('css/bootstrap/bootstrap-responsive.min.css')?>" rel="stylesheet" />
+	<link href="<?=asset_url('css/bootstrap/bootstrap-theme')?>" rel="stylesheet" />
     <link href="<?=asset_url('css/supr-theme/jquery.ui.supr.css')?>" rel="stylesheet" type="text/css"/>
     <link href="<?=asset_url('css/icons.css')?>" rel="stylesheet" type="text/css" />
     <link href="<?=asset_url('css/font-awesome.min.css')?>" rel="stylesheet" type="text/css" />
+	
+	    <link href="<?=asset_url('plugins/forms/uniform/uniform.default.css')?>" type="text/css" rel="stylesheet" />
+    <link href="<?=asset_url('plugins/misc/pnotify/jquery.pnotify.default.css')?>" type="text/css" rel="stylesheet" />
+	<link href="<?=asset_url('plugins/misc/qtip/jquery.qtip.css')?>" rel="stylesheet" type="text/css" />
+	
 	<link rel="stylesheet" type="text/css"  href="<?=asset_url('css/elfinder.min.css')?>">
 	<link rel="stylesheet" type="text/css" media="screen" href="<?=asset_url('css/jquery-ui.css')?>" />
 	<link rel="stylesheet" type="text/css"  href="<?=asset_url('css/theme.css')?>" />
@@ -56,33 +65,114 @@
     </head>
     <body>    
     
-    <div id="header">
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
+
+		
+		
+		 <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                 <div class="navbar-header">
                 <a class="navbar-brand" href="/home/"><?=$this->config->item('site_title');?>.<span class="slogan">DSSD</span></a>                
             </div>
-            <?php if ($this->tank_auth->is_logged_in()) {?>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-right usernav">                   
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
-                            <img src="<?=asset_url('images/user.gif');?>" alt="" class="image" /> 
-                            <span class="txt"><?php echo $this->tank_auth->get_username();?></span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="menu">
-                                <ul>
+				 <?php if ($this->tank_auth->is_logged_in()) {?>
+                <div class="nav-no-collapse">
+                              <ul class="nav">
+                        <li><a href="dashboard.html"><span class="icon16 icomoon-icon-screen-2"></span> Dashboard</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon16 icomoon-icon-cog"></span> Settings
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul>
+                                        <li>                                                    
+                                            <a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Site config</a>
+                                        </li>
+                                        <li>                                                    
+                                            <a href="#"><span class="icon16 icomoon-icon-wrench"></span>Plugins</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon16 icomoon-icon-picture-2"></span>Themes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon16 icomoon-icon-mail-3"></span>Messages <span class="notification">8</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul class="messages">    
+                                        <li class="header"><strong>Messages</strong> (10) emails and (2) PM</li>
+                                        <li>
+                                           <span class="icon"><span class="icon16 icomoon-icon-user-3"></span></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Sammy Morerira</strong></a><span class="time">35 min ago</span></span>
+                                            <span class="msg">I have question about new function ...</span>
+                                        </li>
+                                        <li>
+                                           <span class="icon avatar"><img src="images/avatar.jpg" alt="" /></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>George Michael</strong></a><span class="time">1 hour ago</span></span>
+                                            <span class="msg">I need to meet you urgent please call me ...</span>
+                                        </li>
+                                        <li>
+                                            <span class="icon"><span class="icon16 icomoon-icon-mail-3"></span></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Ivanovich</strong></a><span class="time">1 day ago</span></span>
+                                            <span class="msg">I send you my suggestion, please look and ...</span>
+                                        </li>
+                                        <li class="view-all"><a href="#">View all messages <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                  
+                    
+                  
+                    <ul class="nav pull-right usernav">
+					<li class="dropdown">
+                         
+                        
+                        </li>
+                    
+                    <li><a href="<?=site_url('auth/logout');?>"><span class="icon16 icomoon-icon-exit"></span><span class="txt"> Logout</span></a></li>
+                
+                    </ul>
+					
+					<ul class="nav pull-right usernav">
+                        <li class="dropdown">
+                            
+                            
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                               <img src="<?=asset_url('images/user.gif');?>" alt="" class="image" /> 
+                                <span class="txt"><?php echo $this->tank_auth->get_username();?></span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul>
                                   <li><a href="#"><span class="icon16 icomoon-icon-user-plus"></span>Update Profile</a></li>  
                                   <li><a href="/auth/change_password"><span class="icon16 icomoon-icon-user-plus"></span>Change Password</a></li>                                    
                                 </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="<?=site_url('auth/logout');?>"><span class="icon16 icomoon-icon-exit"></span><span class="txt"> Logout</span></a></li>
-                </ul>
-            </div>
-            <?php }?>
-        </nav><!-- /navbar --> 
-
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div><!-- /.nav-collapse -->
+              </div>
+            </div><!-- /navbar-inner -->
+			<?php }?>
+          </div><!-- /navbar --> 
+		
+		
+		
+		
+		
+		
+		
     </div><!-- End #header -->
