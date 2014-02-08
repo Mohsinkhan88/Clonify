@@ -10,7 +10,7 @@
 
                 <div class="mainnav">
                     <ul>
-                        <li><a href="#"><span class="icon16 icomoon-icon-stats-up"></span>Option 1</a></li>                                                
+                        <li><a href="<?php echo base_url();?>index.php/invoke"><span class="icon16 icomoon-icon-stats-up"></span>Invoke</a></li>                                                
                     </ul>
                 </div>
             </div><!-- End sidenav -->            
