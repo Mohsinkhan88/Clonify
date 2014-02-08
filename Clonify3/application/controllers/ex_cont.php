@@ -65,7 +65,9 @@ class Ex_cont extends CI_Controller
 				$this->repository_model->insertFileName($user_id, $it->getSubPath(), $fileinfo->getFilename());
 			}
 		}
-		
+		$this->load->view('partials/main_header');
+		$this->load->view('dashboard');
+		$this->load->view('partials/main_footer');
 	}
 }
 ?>
