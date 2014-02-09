@@ -25,7 +25,7 @@ class Example_tests extends Toast
 
 
 	/* TESTS BELOW */
-
+	/*
 	function test_simple_addition()
 	{
 		$var = 2 + 2;
@@ -61,7 +61,7 @@ class Example_tests extends Toast
 
 		$this->message = '$a || $b';
 	}
-
+	*/
 }
 
 // End of file example_test.php */
