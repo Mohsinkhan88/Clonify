@@ -3,6 +3,7 @@ package dssd.invoker;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 
 public class InvokeService {
 	public static String CM_ROOT = "";
@@ -36,6 +37,8 @@ public class InvokeService {
 
 	public static void awain() throws IOException{		
 
+		PrintStream ps = new PrintStream("log.txt");
+		System.setOut(ps);
 		InvokeParameter invokeParameter = null;;
 
 
