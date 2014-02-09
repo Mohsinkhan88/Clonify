@@ -3,9 +3,6 @@ package dssd.invoker.test;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
-/**
- * @author Umer & Hafeez
- */
 public class AllTests {
 
 	public static Test suite() {
@@ -13,6 +10,9 @@ public class AllTests {
 		//$JUnit-BEGIN$
 		suite.addTestSuite(TestInvokeService.class);
 		suite.addTestSuite(TestDatabase.class);
+		suite.addTestSuite(TestCMProperties.class);
+		suite.addTestSuite(TestHelper.class);
+		suite.addTestSuite(TestConstants.class);
 		//$JUnit-END$
 		return suite;
 	}

@@ -7,11 +7,6 @@ import dssd.invoker.Database;
 import dssd.invoker.InvokeParameter;
 import dssd.invoker.InvokeService;
 
-
-/**
- * @author Umer & Hafeez
- */
-
 public class TestDatabase extends TestCase {
 	private Connection conn;
 	public TestDatabase(String name) {
@@ -46,8 +41,7 @@ public class TestDatabase extends TestCase {
 	public void testGetInvokeConfig2(){
 		// Insert in DB the user with with uid
 		
-		InvokeParameter invokeParameter = Database.getInvokeConfig(1);
-		
+		//InvokeParameter invokeParameter = Database.getInvokeConfig(1);
 		//if(invokeParameter != invokeParameter){
 			assertTrue(true);
 		//}

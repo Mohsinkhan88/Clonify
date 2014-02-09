@@ -1,10 +1,6 @@
 package dssd.invoker;
 
 
-/**
- * @author Umer & Hafeez
- */
-
 import java.io.*;
 
 public class MyExternalThread extends Thread{

@@ -3,14 +3,13 @@
  */
 package dssd.invoker.test;
 
-
-/**
- * @author Umer & Hafeez
- */
-
 import junit.framework.TestCase;
 import dssd.invoker.InvokeService;
 
+/**
+ * @author Hafeez
+ *
+ */
 public class TestInvokeService extends TestCase {
 
 	/**

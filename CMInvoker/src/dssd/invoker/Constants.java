@@ -1,10 +1,5 @@
 package dssd.invoker;
 
-
-/**
- * @author Umer & Hafeez
- */
-
 public class Constants {
 	
 	public static final String CM_INPUT_FOLDER = "input";
@@ -21,5 +16,10 @@ public class Constants {
 	
 	public static final String SIMPLE_CLONE_CLASSES_FILE_NAME = "Clones";
 	public static final String CLONES_METHOD_FILE_NAME = "ClonesByMethod";
+	
+	
+	public static boolean isClassPresent(){
+		return true;
+	}
 
 }

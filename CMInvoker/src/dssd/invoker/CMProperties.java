@@ -4,11 +4,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
 
-
-/**
- * @author Umer & Hafeez
- */
-
 public class CMProperties {
 	private static Properties properties = new Properties();
 	
@@ -17,8 +12,9 @@ public class CMProperties {
 	private static String databasePassword;
 	private static String cloneminerRoot;
 
-	public static void loadProperties() {
-
+	public static boolean loadProperties() {
+		boolean status = true;
+		
 		OutputStream output = null;
 
 		try {
@@ -30,20 +26,43 @@ public class CMProperties {
 			databasePassword	= properties.getProperty("database.password");
 			cloneminerRoot		= properties.getProperty("cloneminer.root");
 
-			// save properties to project root folder
+			//save properties to project root folder
 			//properties.store(output, null);
 		} catch (IOException io) {
 			io.printStackTrace();
+			
+			status = false;
 		} finally {
 			if (output != null) {
 				try {
 					output.close();
 				} catch (IOException e) {
 					e.printStackTrace();
+					
+					status = false;
 				}
 			}
-
 		}
+		
+		return status;
+	}
+	
+	/**
+	 * This function is mainly for testing function if the this function is
+	 * required for non-testing purpose please modify it with caution.
+	 */
+	public static boolean isAllSet(){
+		if(
+			databaseName != null && databaseName.length()>0 &&
+			databaseUsername != null && databaseUsername.length()>0 &&
+			databasePassword != null &&
+			cloneminerRoot != null && cloneminerRoot.length()>0
+		)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 
 	public static Properties getProperties() {
