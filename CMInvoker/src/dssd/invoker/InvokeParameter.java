@@ -17,7 +17,9 @@ public class InvokeParameter {
 		//TODO Write your code here 
 	}
 	
-	public InvokeParameter(Integer invocation_id, Integer min_similatiry_SCC_tokens,Integer grouping_choice, Integer method_analysis,String suppressed_tokens, String equal_tokens)
+	@Deprecated
+	// @see InvokeParameter(Integer invocation_id, Integer min_similatiry_SCC_tokens, Integer grouping_choice, Integer method_analysis, String suppressed_tokens, String equal_tokens, ArrayList<String> input_files) 
+	public InvokeParameter(Integer invocation_id, Integer min_similatiry_SCC_tokens, Integer grouping_choice, Integer method_analysis, String suppressed_tokens, String equal_tokens)
 	{
 		this.invocation_id = invocation_id;
 		this.min_similatiry_SCC_tokens = min_similatiry_SCC_tokens;
@@ -27,17 +29,40 @@ public class InvokeParameter {
 		this.equal_tokens = equal_tokens;
 	}
 	
+	/**
+	 * This constructor also sets input_files
+	 */
+	public InvokeParameter(Integer invocation_id, Integer min_similatiry_SCC_tokens, Integer grouping_choice, Integer method_analysis, String suppressed_tokens, String equal_tokens, ArrayList<String> input_files)
+	{
+		this.invocation_id = invocation_id;
+		this.min_similatiry_SCC_tokens = min_similatiry_SCC_tokens;
+		this.grouping_choice = grouping_choice;
+		this.method_analysis = method_analysis;
+		this.suppressed_tokens = suppressed_tokens;
+		this.equal_tokens = equal_tokens;
+		this.input_files = input_files;
+	}
+	
+	/**
+	 * This function is written for testing purposes please note any change in this functoin may effect the test cases
+	 */
 	public boolean isAllSet(){
 		if(
-			invocation_id > -1 && 
-			min_similatiry_SCC_tokens > -1 &&
-			grouping_choice > -1 &&
-			method_analysis > -1 &&
+			invocation_id != null && invocation_id > -1 && 
+			min_similatiry_SCC_tokens != null && min_similatiry_SCC_tokens > -1 &&
+			grouping_choice != null && grouping_choice > -1 &&
+			method_analysis != null && method_analysis > -1 &&
 			suppressed_tokens != null && suppressed_tokens.length()>0 && 
 			equal_tokens != null && suppressed_tokens.length()>0 &&
 			input_files != null && input_files.size()>0
 		)
 		{
+			for(String str: input_files){
+				if(str == null || str.length()<1){
+					return false;
+				}
+			}
+			
 			return true;
 		}
 		
@@ -86,6 +111,8 @@ public class InvokeParameter {
 	}
 
 	public void setInput_files(ArrayList<String> input_files) {
+		// TODO : setInput_files is not called because we use getInput_files and then add files to that !
+		
 		this.input_files = input_files;
 	}
 	public String generateFileName(String rep, String dir, String File)
