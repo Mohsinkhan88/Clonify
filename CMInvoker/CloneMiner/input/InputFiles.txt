@@ -1,0 +1,9 @@
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxAccelerometer.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxActivity.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxBitmap.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxGLSurfaceView.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxMusic.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxRenderer.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/Cocos2dxSound.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/SCICopy.java
+C:/xampp/htdocs/Clonify3/files/umerhayat/Umer/SCSInFileInstance.java
