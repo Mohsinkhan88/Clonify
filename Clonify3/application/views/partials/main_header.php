@@ -181,7 +181,7 @@
 
                 <div class="mainnav">
                     <ul>
-                        <li><a href="<?php base_url()?>/index.php/invoke"><span class="icon16 icomoon-icon-stats-up"></span>Invoke</a></li>
+                        <li><a href="<?php echo base_url()?>index.php/invoke"><span class="icon16 icomoon-icon-stats-up"></span>Invoke</a></li>
                         <li>
                             <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Forms<span class="notification red">sub2</span></a>
                             <ul class="sub">
