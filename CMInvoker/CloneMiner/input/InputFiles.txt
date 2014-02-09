@@ -1,9 +1,0 @@
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxAccelerometer.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxActivity.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxBitmap.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxGLSurfaceView.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxMusic.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxRenderer.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/Cocos2dxSound.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/SCICopy.java
-C:/xampp/htdocs/Clonify3/files/abdullah/abc/SCSInFileInstance.java
