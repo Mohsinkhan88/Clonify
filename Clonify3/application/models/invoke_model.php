@@ -89,8 +89,11 @@ class Invoke_model extends CI_Model
 
 	function sup()
     {
+	$supTokens = '';
+	if (!empty($_POST["suppresed2"]))
+	  {
 		$suppresed = $_POST['suppresed2'];
-		$supTokens = '';
+		
 		$first = true;
 		foreach ($_POST['suppresed2'] as $selSup) {
 			if($first){
@@ -101,13 +104,18 @@ class Invoke_model extends CI_Model
 				$supTokens=$supTokens.','.$selSup;
 			}
 		}
+		}
 		$this->session->set_userdata(array('supTokens'=>$supTokens));
+		
 	}
 
 	function eq()
     {
+	$eqTokens = '';
+	  if (!empty($_POST["equal2"]))
+	  {
 		$equal = $_POST['equal2'];		
-		$eqTokens = '';
+		
 		$first = true;
 		foreach ($_POST['equal2'] as $selEq) {
 			if($first){
@@ -118,9 +126,12 @@ class Invoke_model extends CI_Model
 				$eqTokens = $eqTokens.'|'.$selEq;
 			}
 		}
+		}
+		
 		$this->session->set_userdata(array('eqTokens'=>$eqTokens));
 		
 		$this->invoke();
+		
 	}
 	
 	function invoke()

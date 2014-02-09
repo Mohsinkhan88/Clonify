@@ -18,6 +18,8 @@ class Invoke extends CI_Controller
 
 	function index()
 	{
+	
+		$this->session->set_userdata(array('scc_min_sim'=>'','method_analysis'=>'','grouping_choice'=>'','files'=>'','language'=>'','supTokens'=>'','eqTokens'=>''));
 		$data['usrfiles']=$this->invoke_model->get_all_user_files();
 		$data['languages']=$this->invoke_model->get_all_languages();
 		$this->open_view('invoke_init',$data);
