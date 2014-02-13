@@ -25,7 +25,10 @@ class Ex_cont extends CI_Controller
 		array( 
 			'driver' => 'LocalFileSystem', 
 			'path'   => set_realpath('C:\xampp\htdocs\Clonify3\files\\'.$username), 
-			'URL'    => site_url('http://localhost/Clonify3') . '/'
+			'URL'    => site_url('http://localhost/Clonify3') . '/',
+			'uploadOrder'=> array( 'allow', 'deny'),
+			'uploadAllow' => array('image/jpg', 'image/png', 'text', 'java'),
+			'uploadDeny' => array('all'),
 			// more elFinder options here
 		) 
 		)
