@@ -29,8 +29,17 @@ class Ex_cont extends CI_Controller
 			'uploadOrder'=> array( 'allow', 'deny'),
 			'uploadAllow' => array('image/jpg', 'image/png', 'text', 'java'),
 			'uploadDeny' => array('all'),
+			'attributes' => array(
+				array(
+				'pattern' => '/.tmb/',
+				'read' => false,
+				'write' => false,
+				'hidden' => true,
+				'locked' => true
+				)
 			// more elFinder options here
-		) 
+			) 
+		)
 		)
 	);
 	$this->load->library('elfinder_lib', $opts);
