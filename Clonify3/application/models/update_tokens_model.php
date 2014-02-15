@@ -10,11 +10,11 @@ class Update_tokens_model extends CI_Model
 		return $results->result();
 	}
 	
-	function update()
+	function update($fileName)
 	{
 		//echo "</br>";
 		$language = $_POST['language'];
-		$txt_file    = file_get_contents('uploads/b.txt');
+		$txt_file    = file_get_contents('uploads/'.$fileName.'.txt');
 		
 		$rows        = explode("\n", $txt_file);
 		array_shift($rows);

@@ -58,7 +58,23 @@
     $().ready(function() {
         var elf = $('#elfinder').elfinder({
             // lang: 'ru',             // language (OPTIONAL)
-            url : 'http://localhost/Clonify3/ex_cont/elfinder_init'  // connector URL (REQUIRED)
+            url : 'http://localhost/Clonify3/ex_cont/elfinder_init' , // connector URL (REQUIRED),
+			uiOptions: {
+                    toolbar : [
+                        // toolbar configuration
+                        ['open'],
+                        ['back', 'forward'],
+                        ['reload'],
+                        ['home', 'up'],
+                        ['mkdir', 'mkfile', 'upload'],
+                        ['info'],
+                        ['copy', 'cut', 'paste'],
+                        ['rm'],
+                        ['duplicate', 'rename'],
+                        ['search'],
+                        ['view']
+                    ]
+                },
         }).elfinder('instance');            
     });
 	</script>
@@ -182,7 +198,6 @@
                 <div class="mainnav">
                     <ul>
                         <li><a href="<?php echo base_url()?>index.php/invoke"><span class="icon16 icomoon-icon-stats-up"></span>Invoke</a></li>
-						<li><a href="<?php echo base_url()?>index.php/load_results"><span class="icon16 icomoon-icon-stats-up"></span>Load Results</a></li>
                         <li>
                             <a href="#"><span class="icon16 icomoon-icon-list-view-2"></span>Forms<span class="notification red">sub2</span></a>
                             <ul class="sub">
@@ -199,7 +214,6 @@
                                 </li>
                             </ul>
                         </li>
-						<li><a href="<?php echo base_url()?>index.php/updatetokens"><span class="icon16 icomoon-icon-stats-up"></span>Update Tokens</a></li>
                         <li>
                             <a href="#"><span class="icon16 icomoon-icon-grid"></span>Tables</a>
                             <ul class="sub">
