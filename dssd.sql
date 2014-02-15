@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2014 at 12:19 PM
+-- Generation Time: Feb 15, 2014 at 01:28 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -67,6 +67,17 @@ CREATE TABLE IF NOT EXISTS `invocation_parameters` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `languages`
+--
+
+CREATE TABLE IF NOT EXISTS `languages` (
+  `id` int(11) NOT NULL,
+  `language` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login_attempts`
 --
 
@@ -91,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `repository_directory` (
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `repository_id` (`repository_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -107,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `repository_file` (
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `directory_id` (`directory_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
 
@@ -154,6 +165,18 @@ CREATE TABLE IF NOT EXISTS `scc_invocation` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `language_id` int(11) NOT NULL,
+  `token_id` int(11) NOT NULL,
+  `token_name` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -176,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -204,9 +227,10 @@ CREATE TABLE IF NOT EXISTS `user_invocations` (
   `user_id` int(11) NOT NULL,
   `status` int(2) NOT NULL,
   `invoked_time` datetime NOT NULL,
+  `language_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -221,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -237,30 +261,7 @@ CREATE TABLE IF NOT EXISTS `user_repository` (
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `languages`
---
-
-CREATE TABLE IF NOT EXISTS `languages` (
-  `id` int(11) NOT NULL,
-  `language` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tokens`
---
-
-CREATE TABLE IF NOT EXISTS `tokens` (
-  `language_id` int(11) NOT NULL,
-  `token_id` int(11) NOT NULL,
-  `token_name` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
