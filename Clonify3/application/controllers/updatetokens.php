@@ -15,14 +15,11 @@ class Updatetokens extends CI_Controller
 		
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('update_tokens_model');
-		$this->load->library('session');
-		$this->session->keep_flashdata('result');
+		
 	}
 
 	function index()
 	{
-		$this->session->set_flashdata('result', ''); 
-		
 		$data['languages']=$this->update_tokens_model->get_all_languages();
 		$this->load->view('partials/main_header');
 		$this->load->view('update_tokens',$data);
@@ -31,8 +28,7 @@ class Updatetokens extends CI_Controller
 	
 	function update()
 	{	
-		$this->session->set_flashdata('result', ''); 
-		
+		$this->update_tokens_model->get_all_languages();		
 		$config['upload_path'] = './uploads/';		
 		$config['allowed_types'] = 'txt';
 		$config['max_size']	= '100';
@@ -41,36 +37,25 @@ class Updatetokens extends CI_Controller
 
 		$this->load->library('upload', $config);
 
-		$result = '';
-
+		
+		
 		if ( ! $this->upload->do_upload())
 		{
-			echo "If executed<br/>";
 			$result = 'Some error occured';
 			$error = array('error' => $this->upload->display_errors());
-			
-			foreach ($error as &$value) {
-				echo 
-				if(strlen($result)<1){
-					$result = $value;
-					
-					echo $result;
-				}
-			}
+			$result = $error['error'];
 		}
 		else
 		{
-			echo "else executed<br/>";
-			
 			$result = array('upload_data' => $this->upload->data());
 			$result = 'Successfull';
 		}
 		
 		$this->update_tokens_model->update();
-
-		$this->session->set_flashdata('results', $result); 
 	
-		$data['languages']=$this->update_tokens_model->get_all_languages();
+		$data['languages']=$this->update_tokens_model->get_all_languages();		
+		$data['results']= $result;
+		
 		$this->load->view('partials/main_header');
 		$this->load->view('update_tokens', $data);
 		$this->load->view('partials/main_footer');	
