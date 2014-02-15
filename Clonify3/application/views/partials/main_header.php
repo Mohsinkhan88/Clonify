@@ -199,6 +199,7 @@
                                 </li>
                             </ul>
                         </li>
+						<li><a href="<?php echo base_url()?>index.php/updatetokens"><span class="icon16 icomoon-icon-stats-up"></span>Update Tokens</a></li>
                         <li>
                             <a href="#"><span class="icon16 icomoon-icon-grid"></span>Tables</a>
                             <ul class="sub">
