@@ -19,7 +19,7 @@ $config['site_title'] = 'Clonify';
 |
 */
 //$config['base_url'] = 'http://localhost/Clonify3/';
-$config['base_url'] = 'http://localhost/myClonify/Clonify/Clonify3';
+$config['base_url'] = 'http://localhost/Clonify3';
 
 /*
 |--------------------------------------------------------------------------
