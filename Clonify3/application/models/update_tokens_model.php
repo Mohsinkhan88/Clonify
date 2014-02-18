@@ -4,7 +4,7 @@ class Update_tokens_model extends CI_Model
 {
 	function get_all_languages()
 	{
-		$query = "SELECT * FROM languages";
+		$query = "SELECT * FROM languages where id<>7";
 		$results = $this->db->query($query);
 		
 		return $results->result();
@@ -42,4 +42,12 @@ class Update_tokens_model extends CI_Model
 		$query = "INSERT INTO tokens values $values";
 		$this->db->query($query);		
 	}
+	
+	function get_all_language_tokens($language)
+	{
+		$query = "SELECT * FROM tokens WHERE language_id='$language'";
+		$results = $this->db->query($query);
+		return $results->result();
+	}
+	
 }

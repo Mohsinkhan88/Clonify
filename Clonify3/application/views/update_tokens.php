@@ -75,7 +75,17 @@ function myValidate(){
 							<td width="130px;">
 								<input class="btn" type="submit" value="Upload" />
 							</td>
-							
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<select multiple="multiple" id="suppresed" name="suppresed[]">
+									<?php foreach ($tokens as $token){ ?>
+									  <option value="<?php echo $token->token_id ?>"><?php echo $token->token_id." - ".$token->token_name ?></option>
+									<?php } ?>
+								</select>
+							</td>
 						</tr>
 					</table>
 				</form>
@@ -84,3 +94,19 @@ function myValidate(){
         </div><!-- End #content -->
     
     </div><!-- End #wrapper -->
+	
+<script>
+</script>
+<script>
+	function onBodyLoad(){
+	    var sel = document.getElementById('language');
+		for(var i, j = 0; i = sel.options[j]; j++) {
+			if(i.value == <?php echo $selectedLanguage; ?>) {
+				sel.selectedIndex = j;
+				break;
+			}
+		}
+	}
+	
+	onBodyLoad();
+</script>
